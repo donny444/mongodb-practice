@@ -1,13 +1,8 @@
-const MongoClient = require('mongodb').MongoClient
+const http = require("http");
+const app = require("./app.js");
+const server = http.createServer(app);
 
-MongoClient.connect('mongodb://localhost:27017/animals', (err, client) => {
-    if (err) throw err
+const { PORT } = process.env;
+const port = process.env.PORT || PORT;
 
-    const db = client.db('animals')
-
-    db.collection('mammals').find().toArray((err, result) => {
-        if (err) throw err
-
-        console.log(result)
-    })
-})
+server.listen(port, () => console.log(`Server is running on port ${port}`));
