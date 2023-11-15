@@ -7,7 +7,7 @@ const fileDetailsSchema = new mongoose.Schema({
     },
     filePath: {
         type: String,
-        required: true
+        required: false
     },
     fileSize: Number,
     fileType: String,
