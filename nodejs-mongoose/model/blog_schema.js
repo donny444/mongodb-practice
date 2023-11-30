@@ -4,7 +4,11 @@ const blogSchema = new mongoose.Schema({
     title: String, // String is shorthand for {type: String}
     author: String,
     body: String,
-    comments: [{ body: String, date: Date }],
+    comments: [{
+        user: { Schema.Types.ObjectId, ref: "User"},
+        body: String,
+        date: Date
+    }],
     date: { type: Date, default: Date.now },
     hidden: Boolean,
     meta: {
