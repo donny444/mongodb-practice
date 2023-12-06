@@ -3,7 +3,7 @@
 **Front-End**
 - Vite
 - React
-- SCSS
+- SCSS(.scss)
 
 **Back-End**
 - Node.js
@@ -21,7 +21,9 @@
 - Post Page
 ---
 ## To-Dev
-- [] Posting form best practices
-- [] SCSS styling
-- [] Props validation
-- [] Clear unness.. things 
+- [ ] Posting form best practices
+- [ ] SCSS styling
+- [ ] Props validation
+- [ ] Clear unness.. things
+- [ ] Protected '/post' route
+- [ ] Set timeout
