@@ -13,7 +13,6 @@ function PostForm() {
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
     const [body, setBody] = useState("");
-    const [response, setResponse] = useState(null);
     const [error, setError] = useState(null);
 
     const navigate = useNavigate();
@@ -38,8 +37,6 @@ function PostForm() {
                 const errMsg = response.text();
                 throw new Error(errMsg || "Some Error");
             }
-            const responseData = await response.json();
-            setResponse(responseData);
             navigate("/");
         } catch(err) {
             setError(err.message);
@@ -78,7 +75,6 @@ function PostForm() {
                     value="Post"
                 />
                 {error && <p>Error: {error}</p>}
-                {response && <p>Response: {response}</p>}
             </form>
         </div>
     )

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 export default function BlogPage() {
     return (
         <>
@@ -18,7 +19,7 @@ function BlogList() {
         const fetchData = async () => {
             const apiUrl = "http://localhost:5174/";
             const options = {
-                method: "POST",
+                method: "GET",
                 headers: {
                     "Content-Type": "application/json"
                 }
@@ -49,7 +50,7 @@ function BlogList() {
             {response &&
                 <div>
                     {response.map((blog, index) => (
-                        <Blog key={index} title={blog.title} author={blog.author} body={blog.body}/>
+                        <Blog key={index} title={blog.title} author={blog.author} body={blog.body} date={blog.date} />
                     ))}
                 </div>
             }
@@ -57,13 +58,14 @@ function BlogList() {
     );
 }
 
-function Blog({ title, author, body }) {
+function Blog({ title, author, body, date }) {
 
     return (
         <div>
             <h2>{title}</h2>
             <h3>{author}</h3>
             <p>{body}</p>
+            <h5>{date}</h5>
         </div>
     );
 }
