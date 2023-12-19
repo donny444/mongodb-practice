@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const schema = new Schema({
+const schema = new mongoose.Schema({
     name: String,
     binary: Buffer,
     living: Boolean,
@@ -28,3 +28,5 @@ const schema = new Schema({
         of: String
     }
 });
+
+const Schema = mongoose.model("Schema", schema);
