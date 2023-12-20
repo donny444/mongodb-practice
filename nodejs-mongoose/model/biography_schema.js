@@ -15,6 +15,16 @@ const biographySchema = new mongoose.Schema({
 });
 
 const Biography = mongoose.model("Biography", biographySchema);
+Biography.watch().on("change", data => console.log(new Date(), data));
+
+const messi = new Biography({
+    name: "Lionel Messi",
+    birthDate: "1987-06-24",
+    nationality: "Argentina",
+    occupation: "Footballer",
+    bioSummary: "GOAT"
+})
+//messi.save();
 
 module.exports = Biography;
 

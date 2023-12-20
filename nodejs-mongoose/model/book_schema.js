@@ -16,6 +16,7 @@ const bookSchema = new mongoose.Schema({
 });
 
 const Book = mongoose.model("Book", bookSchema);
+Book.watch().on("change", data => console.log(new Date(), data));
 
 module.exports = Book;
 

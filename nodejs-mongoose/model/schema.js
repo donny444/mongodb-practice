@@ -7,7 +7,7 @@ const Model = mongoose.model("Test", schema);
 
 const doc = new Model();
 doc._id instanceof mongoose.Types.ObjectId;
-await doc.save();
+//await doc.save();
 
 doc._id = 1;
-await doc.save();
+//await doc.save();

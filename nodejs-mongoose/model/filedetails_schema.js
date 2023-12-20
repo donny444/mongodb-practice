@@ -18,6 +18,7 @@ const fileDetailsSchema = new mongoose.Schema({
 });
 
 const FileDetails = mongoose.model("FileDetails", fileDetailsSchema);
+FileDetails.watch().on("change", data => console.log(new Date(), data));
 
 module.exports = FileDetails;
 

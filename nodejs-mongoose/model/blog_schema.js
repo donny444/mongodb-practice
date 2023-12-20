@@ -18,5 +18,6 @@ const blogSchema = new mongoose.Schema({
 });
 
 const Blog = mongoose.model("Blog", blogSchema);
+Blog.watch().on("change", data => console.log(new Date(), data));
 
 module.exports = Blog;
