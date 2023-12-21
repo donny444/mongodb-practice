@@ -3,6 +3,7 @@ const Blog = require("./model/blog_schema.js");
 const Book = require("./model/book_schema.js");
 const Biography = require("./model/biography_schema.js");
 const FileDetails = require("./model/filedetails_schema.js");
+const Person = require("./model/person_schema.js");
 
 main().catch(err => console.error(err));
 
@@ -24,6 +25,9 @@ async function main() {
         //await FileDetails.deleteMany({ fileSize: 177856 });
 
         console.log(result);
+
+        const tanadorn = await Person.find({ _id: "65845af73c906648c20042a7" });
+        console.log(tanadorn.fullName);
 
         console.log("Connected!");
     } catch(error) {
