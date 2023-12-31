@@ -1,11 +1,11 @@
-const express = require("express");
+import express from "express";
 const route = express.Router();
-const blogController = require("../controller/blog_controller.js");
-const postController = require("../controller/post_controller.js");
-const commentController = require("../controller/comment_controller.js");
+import blogController from "../controller/blog_controller.js";
+import postController from "../controller/post_controller.js";
+import commentController from "../controller/comment_controller.js";
 
 route.get("/", blogController);
 route.post("/post", postController);
-route.get("/comment", commentController);
+route.post("/comment", commentController);
 
-module.exports =  route;
+export default route;

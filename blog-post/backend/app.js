@@ -1,7 +1,7 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-const bodyParser = require("body-parser");
+import express from "express";
+import mongoose from "mongoose"
+import cors from "cors"
+import bodyParser from "body-parser"
 
 const app = express();
 
@@ -18,8 +18,8 @@ mongoose.connect("mongodb://127.0.0.1:27017/blog-post").
 
 mongoose.connection.on("connected", () => console.log("Connected to database"));
 
-const routes = require("./router/routes.js");
+import routes from "./router/routes.js";
 
 app.use("/", routes);
 
-module.exports = app;
+export default app;

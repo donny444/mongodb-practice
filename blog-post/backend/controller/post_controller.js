@@ -1,4 +1,4 @@
-const Blog = require("../model/blog_model.js");
+import Blog from "../model/blog_model.js";
 
 async function postController(req, res) {
     const { title, author, body } = req.body;
@@ -32,4 +32,4 @@ async function postController(req, res) {
     }
 }
 
-module.exports = postController;
+export default postController;
